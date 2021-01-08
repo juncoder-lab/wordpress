@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/wp-content/themes/childhood/style.css" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1mm5XQOkIPySV0RUTOVicAzvrhP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
