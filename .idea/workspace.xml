@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad4032e7-6e82-4f93-a7b2-b603d2db5f68" name="Default Changelist" comment="" />
+    <list default="true" id="ad4032e7-6e82-4f93-a7b2-b603d2db5f68" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/childhood/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/childhood/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/childhood/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/childhood/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +30,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/wp-content/themes/childhood/style.css" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -28,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/childhoodVerstka" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -47,11 +63,23 @@
       <updated>1610085965212</updated>
       <workItem from="1610085966511" duration="66000" />
       <workItem from="1610086106868" duration="7625000" />
+      <workItem from="1610536553334" duration="1326000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="521" y="287" key="#WordPress" timestamp="1610086850087">
@@ -62,10 +90,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1440.900@0.0.1366.728" timestamp="1610086883422" />
-    <state x="518" y="286" key="NewPhpFileDialog" timestamp="1610088432002">
+    <state x="518" y="286" key="NewPhpFileDialog" timestamp="1610099834394">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="518" y="286" key="NewPhpFileDialog/0.0.1366.728/1366.0.1440.900@0.0.1366.728" timestamp="1610088432002" />
+    <state x="518" y="286" key="NewPhpFileDialog/0.0.1366.728/1366.0.1440.900@0.0.1366.728" timestamp="1610099834394" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>C:\OpenServer\domains\childhood</wordpressPath>
