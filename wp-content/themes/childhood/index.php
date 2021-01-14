@@ -4,6 +4,50 @@
 <div class="mainslider glide">
     <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
+
+            <?php
+            // параметры по умолчанию
+            $posts = get_posts( array(
+                'numberposts' => -1,
+                'category_name'    => 0,
+                'orderby'     => 'date',
+                'order'       => 'ASC',
+                'post_type'   => 'post',
+                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+            ) );
+
+            foreach( $posts as $post ){
+                setup_postdata($post);
+                // формат вывода the_title() ...
+            ?>
+                <li style="background-image: url('<?php echo bloginfo('template_url');?>/assets/img/bg_1.jpg')" class="glide__slide">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 offset-1">
+                            <h2 class="slider__title">Воплощаем мечты детства</h2>
+                            <a href="#" class="button">Узнать больше</a>
+                        </div>
+                    </div>
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                        <svg width="15" height="25" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.982942 13.3923L12.2253 24.631C12.7186 25.123 13.5179 25.123 14.0124 24.631C14.5057 24.1389 14.5057 23.3397 14.0124 22.8476L3.66178 12.5007L14.0112 2.15378C14.5045 1.66172 14.5045 0.862477 14.0112 0.369169C13.5179 -0.122894 12.7174 -0.122894 12.2241 0.369169L0.981696 11.6077C0.495966 12.0947 0.495966 12.9065 0.982942 13.3923Z" fill="white"/>
+                        </svg>
+                    </button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                        <svg width="15" height="25" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.0171 11.6077L2.77467 0.369029C2.28137 -0.123032 1.48213 -0.123032 0.987571 0.369029C0.494263 0.861093 0.494264 1.66033 0.987572 2.15239L11.3382 12.4993L0.98882 22.8462C0.495512 23.3383 0.495512 24.1375 0.98882 24.6308C1.48213 25.1229 2.28261 25.1229 2.77592 24.6308L14.0183 13.3923C14.504 12.9053 14.504 12.0935 14.0171 11.6077Z" fill="white"/>
+                        </svg>
+                    </button>
+                </div>
+            </li>
+
+            <?php
+
+            }
+
+            wp_reset_postdata(); // сброс
+            ?>
+
             <li style="background-image: url('<?php echo bloginfo('template_url');?>/assets/img/bg_1.jpg')" class="glide__slide">
                 <div class="container">
                     <div class="row">
@@ -72,15 +116,19 @@
         <div class="row">
             <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-1">
                 <div class="about__img">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/about.jpg" alt="про компанию">
+                    <!--<img src="<?php /*the_field('about_img'); */?>" alt="про компанию">-->
+                    <?php
+                    $image = get_field('about_img');
+                    if (!empty($image)):
+                    ?>
+                        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 col-xl-5 offset-xl-1">
-                <h1 class="title underlined">Про компанию</h1>
+                <h1 class="title underlined"><?php the_field('about_title'); ?></h1>
                 <div class="about__text">
-                    Наша компания уже больше десяти лет дарит позитивные эмоции детям и их родителям. Мы воплощаем все детские мечты и помогаем родителям дарить счастливое детство!
-                    <br> <br>
-                    Но и взрослые иногда так нуждаются в детских эмоциях! Мы можем и это, ведь так приятно почувствовать заботу даже когда тебе за... :)
+                    <?php the_field('about_descr'); ?>
                 </div>
                 <a href="#" class="button">Узнать больше</a>
             </div>
@@ -92,7 +140,7 @@
         <div class="title">Наша команда</div>
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-                <img class="specialists__img" src="<?php echo bloginfo('template_url');?>/assets/img/team.jpg" alt="наша команда">
+                <img class="specialists__img" src="<?php the_field('team_photo'); ?>" alt="наша команда">
             </div>
         </div>
     </div>
@@ -253,7 +301,7 @@
                 <div class="contacts__descr underlined">
                     Мы находимся в Москве, метро "Парк победы", в деловом центре "Парк победы", второй этаж
                     <br> <br>
-                    по адресу ул. Василисы Кожиной, 1
+                    <?php the_field('address', 2); ?>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -313,7 +361,7 @@
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                <a href="tel:+797867834347">+797867834347</a>
+                                <a href="tel:<?php the_field('phone1', 2); ?>"><?php the_field('phone1', 2); ?></a>
                             </div>
                         </div>
                         <div class="contacts__phoneblock">
@@ -363,13 +411,13 @@
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                <a href="tel:+797867834358">+797867834358</a>
+                                <a href="tel:<?php the_field('phone2', 2); ?>"><?php the_field('phone2', 2); ?></a>
                             </div>
                         </div>
                     </div>
                     <div class="contacts__mail">
                         Или напишите нам на почту
-                        <a href="mailto:mirdetstva@gmail.com">mirdetstva@gmail.com</a>
+                        <a href="<?php the_field('mail',2); ?>"><?php the_field('mail',2); ?></a>
                     </div>
                 </div>
             </div>
