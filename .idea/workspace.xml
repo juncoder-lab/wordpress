@@ -10,8 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad4032e7-6e82-4f93-a7b2-b603d2db5f68" name="Default Changelist" comment="13/01/2021">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ad4032e7-6e82-4f93-a7b2-b603d2db5f68" name="Default Changelist" comment="14/01/2021">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/childhood/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/childhood/index.php" afterDir="false" />
     </list>
