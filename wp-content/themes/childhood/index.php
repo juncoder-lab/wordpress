@@ -32,7 +32,14 @@
                                 class="slider__title">
                                 <?php the_title();?>
                             </h2>
-                            <a href="#" class="button">Узнать больше</a>
+                            <?php
+                            $button = get_field('slider_btn');
+                            if ($button == 'on') { ?>
+                                <a href="<?php the_field('slider_link'); ?>" class="button">Узнать больше</a>
+                            <?php
+                            }
+                            ?>
+
                         </div>
                     </div>
                     <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
@@ -95,6 +102,40 @@
     <div class="container">
         <h2 class="subtitle">Мягкие игрушки</h2>
         <div class="toys__wrapper">
+            <?php
+            $posts = get_posts( array(
+                'numberposts' => -1,
+                'category_name'    => 'soft_toys',
+                'orderby'     => 'date',
+                'order'       => 'ASC',
+                'post_type'   => 'post',
+                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+            ) );
+
+            foreach( $posts as $post ){
+                setup_postdata($post);
+                // формат вывода the_title() ...
+            ?>
+                <div class="toys__item" style="background-image:url(<?php
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail_url();
+                } else {
+                    echo bloginfo('template_url').'/assets/img/not-found.jpg';
+                } ?>)">
+                    <div class="toys__item-info">
+                        <div class="toys__item-title"><?php the_title();?></div>
+                        <div class="toys__item-descr">
+                            <?php the_field('text_about'); ?>
+                        </div>
+                        <div class="minibutton toys__trigger">Подробнее</div>
+                    </div>
+                </div>
+
+                <?php
+            }
+
+            wp_reset_postdata(); // сброс
+            ?>
             <div class="toys__item" style="background-image: url(<?php echo bloginfo('template_url');?>/assets/img/toy_1.jpg)">
                 <div class="toys__item-info">
                     <div class="toys__item-title">Плюшевые медведи</div>
@@ -104,7 +145,6 @@
                     <div class="minibutton toys__trigger">Подробнее</div>
                 </div>
             </div>
-
             <div class="toys__item" style="background-image: url(<?php echo bloginfo('template_url');?>/assets/img/toy_2.jpg)">
                 <div class="toys__item-info">
                     <div class="toys__item-title">Совенок</div>
@@ -114,7 +154,6 @@
                     <div class="minibutton toys__trigger">Подробнее</div>
                 </div>
             </div>
-
             <div class="toys__item" style="background-image: url(<?php echo bloginfo('template_url');?>/assets/img/toy_3.jpg)">
                 <div class="toys__item-info">
                     <div class="toys__item-title">Кролики</div>
@@ -123,7 +162,6 @@
                     <div class="minibutton toys__trigger">Подробнее</div>
                 </div>
             </div>
-
             <div class="toys__item" style="background-image: url(<?php echo bloginfo('template_url');?>/assets/img/toy_4.jpg)">
                 <div class="toys__item-info">
                     <div class="toys__item-title">Гибкие</div>
