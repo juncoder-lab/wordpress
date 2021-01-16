@@ -8,3 +8,4 @@ function childhood_scripts ()
 }
 add_theme_support( 'custom-logo' );
 add_theme_support( 'post-thumbnails' );
+add_filter( 'wpcf7_validate_configuration', '__return_false' );
